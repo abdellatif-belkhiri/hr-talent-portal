@@ -1,0 +1,17 @@
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - "8080:80"
+    environment:
+      - MYSQL_HOST=db
+  db:
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=hr_portal
+      - MYSQL_USER=hr_admin
+      - MYSQL_PASSWORD=default_hr_password
+    volumes:
+      - ./install/setup.sql:/docker-entrypoint-initdb.d/init.sql
