@@ -16,4 +16,4 @@ CREATE TABLE users (
 );
 
 INSERT INTO users (username, password) 
-VALUES ('HR-manager', SHA1('Welcome2HR!'));
+VALUES ('Michael.scott@fortielab.com', SHA1('Welcome2HR!'));
